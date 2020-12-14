@@ -21,9 +21,12 @@ jobs:
       with:
         candidate: grails
         version: 1.3.9
-#     - name: List files
-#       shell: bash
-#       run: ls $HOME -al
+    - name: Unzip grails
+      shell: bash
+      run: unzip  ${{ steps.sdkman.outputs.file }} -d $HOME/
+    - name: List files
+      shell: bash
+      run: ls $HOME -al
 #     - name: npm install
 #       run: npm install
 #     - name: npm run bundle
